@@ -27,8 +27,8 @@ jobs:
     - name: Build the Dogs Docker image
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-        ECR_REPOSITORY: docker_ecr
-        IMAGE_TAG: dogsv2
+        ECR_REPOSITORY: ecr_dogs
+        IMAGE_TAG: dogsv1
       run: |
         cd dogswebapp/dogs/
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
